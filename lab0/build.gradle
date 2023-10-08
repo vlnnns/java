@@ -1,0 +1,21 @@
+plugins {
+    id("java")
+}
+
+group = "org.example"
+version = "1.0-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Додайте TestNG з вказаною версією
+    testImplementation("org.testng:testng:7.8.0")
+    testImplementation 'org.testng:testng:7.1.0'
+}
+
+test {
+    // Використовуйте TestNG як провідний фреймворк для тестів
+    useTestNG()
+}
