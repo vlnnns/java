@@ -70,8 +70,15 @@ public class Variant6Test {
 
     @Test(dataProvider = "switchProvider")
     public void switchTest(int unitNumber, double lengthINUnits, double expected) {
-        new Variant6();
-        assertEquals(Variant6.switchTask(unitNumber, lengthINUnits), expected);
+        Variant6 variant = new Variant6();
+        assertEquals(variant.switchTask(unitNumber, lengthINUnits), expected);
+    }
+
+    @Test(dataProvider = "negativeSwitchProvider")
+    public void negativeSwitchTest(int unitNumber, double lengthINUnits, double unexpected) {
+        Variant6 variant = new Variant6();
+        double result = variant.switchTask(unitNumber, lengthINUnits);
+        assertNotEquals(result, unexpected, "Unexpected result for input: unitNumber=" + unitNumber + ", lengthINUnits=" + lengthINUnits);
     }
 
     @DataProvider
@@ -79,6 +86,10 @@ public class Variant6Test {
         return new Object[][]{{1, 27, 2.7}, {3, 6, 6}, {2, 27.6, 27600}};
     }
 
+    @DataProvider
+    public Object[][] negativeSwitchProvider() {
+        return new Object[][]{{1, 27, 5.0}, {3, 6, 10.0}, {2, 27.6, 1000.0}};
+    }
 
     ///////////////////////////////////////////////////
 
