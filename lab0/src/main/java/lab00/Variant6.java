@@ -129,7 +129,7 @@ public class Variant6 {
 
     public static int[] arrayTask(int n, int a, int b) {
         if (n <= 2) {
-            return null;
+            throw new IllegalArgumentException("n should be grater than 2");
         }
 
         int[] array = new int[n];
