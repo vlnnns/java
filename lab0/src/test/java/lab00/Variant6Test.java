@@ -5,6 +5,9 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
+import static org.testng.Assert.assertNotEquals;
+
+
 public class Variant6Test {
 
     @Test(dataProvider = "inputProvider")
@@ -154,3 +157,4 @@ public class Variant6Test {
         };
     }
 }
+
